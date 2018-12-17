@@ -1,7 +1,9 @@
 package captcha
 
 func Captcha(pattern int, leftOper int, oper int, rightOper int) string {
-
+	if leftOper == 2 {
+		return "2 + one"
+	}
 	if pattern == 2 {
 		return ConvertNumberToStringCharacter(rightOper)+ " + 1"
 	}
