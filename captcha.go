@@ -5,13 +5,10 @@ import (
 )
 
 func Captcha(pattern int, leftOper int, oper int, rightOper int) string {
-	if oper == 2{
-		return "1 - one"
-	}
 	if pattern == 2 {
-		return ConvertNumberToStringCharacter(rightOper) + " + " + strconv.Itoa(leftOper)
+		return ConvertNumberToStringCharacter(rightOper) + " "+ConvertNumberToStringOperater(oper)+" " + strconv.Itoa(leftOper)
 	}
-	return strconv.Itoa(leftOper) +" + "+ConvertNumberToStringCharacter(rightOper)
+	return strconv.Itoa(leftOper) +" "+ConvertNumberToStringOperater(oper)+" "+ConvertNumberToStringCharacter(rightOper)
 }
 
 func ConvertNumberToStringCharacter(number int) string {
@@ -46,5 +43,18 @@ func ConvertNumberToStringCharacter(number int) string {
 		return "nine"
 	}
 
+	return ""
+}
+
+func ConvertNumberToStringOperater(oper int) string {
+	if oper == 1 {
+		return "+"
+	}
+	if oper == 2 {
+		return "-"
+	}
+	if oper == 3 {
+		return "x"
+	}
 	return ""
 }
