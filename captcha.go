@@ -1,13 +1,14 @@
 package captcha
 
+import (
+    "strconv"
+)
+
 func Captcha(pattern int, leftOper int, oper int, rightOper int) string {
-	if leftOper == 2 {
-		return "2 + one"
-	}
 	if pattern == 2 {
-		return ConvertNumberToStringCharacter(rightOper)+ " + 1"
+		return ConvertNumberToStringCharacter(rightOper) + " + " + strconv.Itoa(leftOper)
 	}
-	return "1 + "+ConvertNumberToStringCharacter(rightOper)
+	return strconv.Itoa(leftOper) +" + "+ConvertNumberToStringCharacter(rightOper)
 }
 
 func ConvertNumberToStringCharacter(number int) string {
