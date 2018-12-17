@@ -5,6 +5,9 @@ import (
 )
 
 func Captcha(pattern int, leftOper int, oper int, rightOper int) string {
+	if oper == 2{
+		return "1 - one"
+	}
 	if pattern == 2 {
 		return ConvertNumberToStringCharacter(rightOper) + " + " + strconv.Itoa(leftOper)
 	}

@@ -52,3 +52,12 @@ func TestCaseOneTwoOneOne(t *testing.T) {
 		t.Error("it should be " , expect)
 	}
 }
+
+func TestCaseOneOneTwoOne(t *testing.T) {
+	result := captcha.Captcha(1, 1, 2, 1)
+	expect := "1 - one"
+	if result != expect {
+		t.Error("it should be " , expect)
+	}
+}
+
